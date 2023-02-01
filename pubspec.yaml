@@ -1,0 +1,36 @@
+name: medica
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter: 
+    sdk: flutter
+  carousel_slider: ^4.2.1
+  dots_indicator: ^2.1.0
+  flutter_svg: ^1.1.6
+  google_fonts: ^3.0.1
+  dio: ^4.0.6
+  intl: ^0.18.0
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/
+
+  fonts:
+    - family: Mulish
+      fonts:
+        - asset: assets/fonts/Mulish-Regular.ttf
+          
+
+
