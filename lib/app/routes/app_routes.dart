@@ -12,6 +12,7 @@ abstract class Routes {
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
   static const FILL_PROFILE = _Paths.FILL_PROFILE;
   static const CREATE_PIN = _Paths.CREATE_PIN;
+  static const OTP_VERIFICATION = _Paths.OTP_VERIFICATION;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const FORGOT_PASSWORD = '/forgot-password';
   static const FILL_PROFILE = '/fill-profile';
   static const CREATE_PIN = '/create-pin';
+  static const OTP_VERIFICATION = '/otp-verification';
 }

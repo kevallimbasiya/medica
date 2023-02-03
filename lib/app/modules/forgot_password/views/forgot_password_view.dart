@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
+import 'package:medica/app/routes/app_pages.dart';
 
 import '../controllers/forgot_password_controller.dart';
 
@@ -155,7 +156,9 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                   minimumSize: Size(MediaQuery.of(context).size.width, 50),
                   shape: const StadiumBorder(),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.OTP_VERIFICATION);
+                },
                 child: const Text("Continue"),
               ),
             ],

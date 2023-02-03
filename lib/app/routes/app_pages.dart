@@ -12,6 +12,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/otp_verification/bindings/otp_verification_binding.dart';
+import '../modules/otp_verification/views/otp_verification_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
 import '../modules/signin/views/signin_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.CREATE_PIN,
       page: () => const CreatePinView(),
       binding: CreatePinBinding(),
+    ),
+    GetPage(
+      name: _Paths.OTP_VERIFICATION,
+      page: () => const OtpVerificationView(),
+      binding: OtpVerificationBinding(),
     ),
   ];
 }
