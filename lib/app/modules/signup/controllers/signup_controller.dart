@@ -11,4 +11,7 @@ class SignupController extends GetxController {
   set visible(bool value) => _visible.value = value;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  TextEditingController numbercontroller =  TextEditingController();
+  TextEditingController emailcontroller = TextEditingController();
 }

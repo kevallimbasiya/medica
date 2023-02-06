@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
+import 'package:pinput/pinput.dart';
 
 import '../controllers/create_pin_controller.dart';
 
@@ -31,101 +31,21 @@ class CreatePinView extends GetView<CreatePinController> {
             const SizedBox(
               height: 30,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey[200],
-                  ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                    ),
-                    textAlign: TextAlign.center,
-                    showCursor: false,
-                    inputFormatters: [LengthLimitingTextInputFormatter(1)],
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                      }
-                    },
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey[200],
-                  ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration:
-                        const InputDecoration(border: OutlineInputBorder()),
-                    textAlign: TextAlign.center,
-                    showCursor: false,
-                    inputFormatters: [LengthLimitingTextInputFormatter(1)],
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                      } else if (value.isEmpty) {
-                        FocusScope.of(context).previousFocus();
-                      }
-                    },
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey[200],
-                  ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration:
-                        const InputDecoration(border: OutlineInputBorder()),
-                    textAlign: TextAlign.center,
-                    showCursor: false,
-                    inputFormatters: [LengthLimitingTextInputFormatter(1)],
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        FocusScope.of(context).nextFocus();
-                      } else if (value.isEmpty) {
-                        FocusScope.of(context).previousFocus();
-                      }
-                    },
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey[200],
-                  ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration:
-                        const InputDecoration(border: OutlineInputBorder()),
-                    textAlign: TextAlign.center,
-                    showCursor: false,
-                    inputFormatters: [LengthLimitingTextInputFormatter(1)],
-                    onChanged: (value) {
-                      if (value.isEmpty) {
-                        FocusScope.of(context).previousFocus();
-                      } else if (controller.focus = false) {
-                        FocusScope.of(context).setFirstFocus(FocusScopeNode());
-                      }
-                    },
-                  ),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Pinput(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                length: 4,
+                defaultPinTheme: PinTheme(
+                    height: 50,
+                    width: 50,
+                    textStyle: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(10),
+                    )),
+              ),
             )
           ],
         ),

@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/Welcome/bindings/welcome_binding.dart';
 import '../modules/Welcome/views/welcome_view.dart';
+import '../modules/create_new_password/bindings/create_new_password_binding.dart';
+import '../modules/create_new_password/views/create_new_password_view.dart';
 import '../modules/create_pin/bindings/create_pin_binding.dart';
 import '../modules/create_pin/views/create_pin_view.dart';
 import '../modules/fill_profile/bindings/fill_profile_binding.dart';
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.OTP_VERIFICATION,
       page: () => const OtpVerificationView(),
       binding: OtpVerificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_NEW_PASSWORD,
+      page: () => const CreateNewPasswordView(),
+      binding: CreateNewPasswordBinding(),
     ),
   ];
 }

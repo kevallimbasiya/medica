@@ -2,7 +2,12 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
+import '../../forgot_password/controllers/forgot_password_controller.dart';
+import '../../signup/controllers/signup_controller.dart';
+
 class OtpVerificationController extends GetxController {
+  ForgotPasswordController forgotPasswordController = Get.find<ForgotPasswordController>();
+  SignupController signupController = Get.find<SignupController>();
   @override
   void onInit() {
     startTimer();

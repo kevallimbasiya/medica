@@ -122,6 +122,25 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   TextFormField(
+                    readOnly: true,
+                    decoration: InputDecoration(
+                      fillColor: Colors.grey.shade100,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: const BorderSide(color: Colors.white),
+                      ),
+                      labelText: "Mobile Number",
+                      suffixIcon: const Icon(Icons.call),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
                     controller: controller.emailcontroller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -134,7 +153,7 @@ class FillProfileView extends GetView<FillProfileController> {
                         borderSide: const BorderSide(color: Colors.white),
                       ),
                       labelText: "Email",
-                      suffixIcon: const Icon(Icons.email),
+                      suffixIcon: const Icon(Icons.mail_outline),
                     ),
                     validator: (value) => controller.email(value),
                   ),
