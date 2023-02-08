@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medica/app/routes/app_pages.dart';
 import 'package:pinput/pinput.dart';
 
 import '../controllers/create_pin_controller.dart';
@@ -17,7 +18,8 @@ class CreatePinView extends GetView<CreatePinController> {
         foregroundColor: Colors.black,
         elevation: 0,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             const SizedBox(
@@ -35,7 +37,8 @@ class CreatePinView extends GetView<CreatePinController> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Pinput(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                length: 4,
+                obscureText: true,
+                autofocus: true,
                 defaultPinTheme: PinTheme(
                     height: 50,
                     width: 50,
@@ -46,7 +49,25 @@ class CreatePinView extends GetView<CreatePinController> {
                       borderRadius: BorderRadius.circular(10),
                     )),
               ),
-            )
+            ),
+            // const SizedBox(
+            //   height: 450,
+            // ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(350, 50),
+                          shape: const StadiumBorder()),
+                      onPressed: () {
+                        Get.toNamed(Routes.SET_FINGERPRINT);
+                      },
+                      child: const Text("Continue")),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -6,7 +6,8 @@ import '../../forgot_password/controllers/forgot_password_controller.dart';
 import '../../signup/controllers/signup_controller.dart';
 
 class OtpVerificationController extends GetxController {
-  ForgotPasswordController forgotPasswordController = Get.find<ForgotPasswordController>();
+  ForgotPasswordController forgotPasswordController =
+      Get.find<ForgotPasswordController>();
   SignupController signupController = Get.find<SignupController>();
   @override
   void onInit() {
@@ -19,6 +20,8 @@ class OtpVerificationController extends GetxController {
     startTimer();
     super.onClose();
   }
+
+  
 
   final _second = 5.obs;
   int get second => _second.value;

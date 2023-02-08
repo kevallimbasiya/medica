@@ -14,6 +14,7 @@ abstract class Routes {
   static const CREATE_PIN = _Paths.CREATE_PIN;
   static const OTP_VERIFICATION = _Paths.OTP_VERIFICATION;
   static const CREATE_NEW_PASSWORD = _Paths.CREATE_NEW_PASSWORD;
+  static const SET_FINGERPRINT = _Paths.SET_FINGERPRINT;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const CREATE_PIN = '/create-pin';
   static const OTP_VERIFICATION = '/otp-verification';
   static const CREATE_NEW_PASSWORD = '/create-new-password';
+  static const SET_FINGERPRINT = '/set-fingerprint';
 }

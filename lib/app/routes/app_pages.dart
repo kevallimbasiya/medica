@@ -16,6 +16,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/otp_verification/bindings/otp_verification_binding.dart';
 import '../modules/otp_verification/views/otp_verification_view.dart';
+import '../modules/set_fingerprint/bindings/set_fingerprint_binding.dart';
+import '../modules/set_fingerprint/views/set_fingerprint_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
 import '../modules/signin/views/signin_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -28,7 +30,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.FILL_PROFILE;
 
   static final routes = [
     GetPage(
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.CREATE_NEW_PASSWORD,
       page: () => const CreateNewPasswordView(),
       binding: CreateNewPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.SET_FINGERPRINT,
+      page: () => const SetFingerprintView(),
+      binding: SetFingerprintBinding(),
     ),
   ];
 }
