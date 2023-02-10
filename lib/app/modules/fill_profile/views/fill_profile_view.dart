@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:medica/app/routes/app_pages.dart';
 
 import '../controllers/fill_profile_controller.dart';
@@ -29,21 +30,53 @@ class FillProfileView extends GetView<FillProfileController> {
                   Stack(
                     children: [
                       GestureDetector(
-                        child: Container(
-                          height: 170,
-                          width: 170,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(150),
-                            color: Colors.grey[200],
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.grey[300],
-                              size: 150,
+                        onTap: () {
+                          Get.bottomSheet(
+                            Container(
+                              color: Colors.white,
+                              child: Wrap(
+                                children: [
+                                  ListTile(
+                                    leading:
+                                        const Icon(Icons.camera_alt_outlined),
+                                    title: const Text("Open with Camera"),
+                                    onTap: () =>
+                                        controller.getImage(ImageSource.camera),
+                                  ),
+                                  ListTile(
+                                    leading:
+                                        const Icon(Icons.photo_album_outlined),
+                                    title: const Text("Open with Gallery"),
+                                    onTap: () => controller
+                                        .getImage(ImageSource.gallery),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
+                        child: Obx(() => ClipOval(
+                              child: Container(
+                                height: 170,
+                                width: 170,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(150),
+                                  color: Colors.grey[200],
+                                ),
+                                child: controller.img != null
+                                    ? Image.file(
+                                        controller.img!,
+                                        width: 170,
+                                        height: 170,
+                                        fit: BoxFit.cover,
+                                      )
+                                    : Icon(
+                                        Icons.person,
+                                        color: Colors.grey[300],
+                                        size: 150,
+                                      ),
+                              ),
+                            )),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(

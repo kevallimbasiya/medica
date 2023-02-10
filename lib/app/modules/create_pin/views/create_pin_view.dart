@@ -34,25 +34,21 @@ class CreatePinView extends GetView<CreatePinController> {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Pinput(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                obscureText: true,
-                autofocus: true,
-                defaultPinTheme: PinTheme(
-                    height: 50,
-                    width: 50,
-                    textStyle: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10),
-                    )),
-              ),
-            ),
-            // const SizedBox(
-            //   height: 450,
-            // ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Pinput(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  obscureText: true,
+                  autofocus: true,
+                  defaultPinTheme: PinTheme(
+                      height: 50,
+                      width: 50,
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                )),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -67,6 +63,9 @@ class CreatePinView extends GetView<CreatePinController> {
                       child: const Text("Continue")),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),
