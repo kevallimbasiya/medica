@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:medica/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
   final _check = false.obs;
@@ -28,6 +29,7 @@ class LoginController extends GetxController {
       );
       Get.back();
       Get.snackbar("success", response.data["message"]);
+      Get.offAllNamed(Routes.MAIN);
     } catch (e) {
       Get.back();
       print(e);

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:medica/app/modules/Welcome/views/welcome_view.dart';
+import 'package:medica/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
   @override
@@ -13,7 +13,7 @@ class HomeController extends GetxController {
   void splash1() {
     Timer(
       const Duration(seconds: 3),
-      () => Get.to(const WelcomeView()),
+      () => Get.offNamed(Routes.WELCOME),
     );
   }
 }

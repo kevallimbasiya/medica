@@ -65,7 +65,7 @@ class SplashView extends GetView<SplashController> {
               child: ElevatedButton(
                 onPressed: () {
                   if (controller.values == 2) {
-                    Get.toNamed(Routes.SIGNIN);
+                    Get.offAllNamed(Routes.SIGNIN);
                   }
                   controller.carouselController.nextPage();
                 },

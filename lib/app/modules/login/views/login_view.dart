@@ -55,6 +55,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                       prefixIcon: const Icon(Icons.email),
                       labelText: "Email",
+                      hintText: "abc@test.com"
                     ),
                     validator: (value) {
                       if (value == null) {
@@ -88,6 +89,7 @@ class LoginView extends GetView<LoginController> {
                             : Icons.visibility_off_outlined)),
                       ),
                       labelText: "Password",
+                      hintText: "Test@123"
                     ),
                   ),
                   Row(

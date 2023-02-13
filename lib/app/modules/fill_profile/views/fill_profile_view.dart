@@ -27,76 +27,75 @@ class FillProfileView extends GetView<FillProfileController> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 children: [
-                  Stack(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Get.bottomSheet(
-                            Container(
-                              color: Colors.white,
-                              child: Wrap(
-                                children: [
-                                  ListTile(
-                                    leading:
-                                        const Icon(Icons.camera_alt_outlined),
-                                    title: const Text("Open with Camera"),
-                                    onTap: () =>
-                                        controller.getImage(ImageSource.camera),
-                                  ),
-                                  ListTile(
-                                    leading:
-                                        const Icon(Icons.photo_album_outlined),
-                                    title: const Text("Open with Gallery"),
-                                    onTap: () => controller
-                                        .getImage(ImageSource.gallery),
-                                  ),
-                                ],
+                  GestureDetector(
+                    onTap: () {
+                      Get.bottomSheet(
+                        Container(
+                          color: Colors.white,
+                          child: Wrap(
+                            children: [
+                              ListTile(
+                                leading: const Icon(Icons.camera_alt_outlined),
+                                title: const Text("Open with Camera"),
+                                onTap: () =>
+                                    controller.getImage(ImageSource.camera),
                               ),
+                              ListTile(
+                                leading: const Icon(Icons.photo_album_outlined),
+                                title: const Text("Open with Gallery"),
+                                onTap: () =>
+                                    controller.getImage(ImageSource.gallery),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Stack(
+                      children: [
+                        Obx(
+                          () => ClipOval(
+                            child: Container(
+                              height: 170,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                              ),
+                              child: controller.img != null
+                                  ? Image.file(
+                                      controller.img!,
+                                      width: 170,
+                                      height: 170,
+                                      fit: BoxFit.cover,
+                                    )
+                                  : Icon(
+                                      Icons.person,
+                                      color: Colors.grey[300],
+                                      size: 150,
+                                    ),
                             ),
-                          );
-                        },
-                        child: Obx(() => ClipOval(
-                              child: Container(
-                                height: 170,
-                                width: 170,
-                                decoration: BoxDecoration(
-                                  // borderRadius: BorderRadius.circular(150),
-                                  color: Colors.grey[200],
-                                ),
-                                child: controller.img != null
-                                    ? Image.file(
-                                        controller.img!,
-                                        width: 170,
-                                        height: 170,
-                                        fit: BoxFit.cover,
-                                      )
-                                    : Icon(
-                                        Icons.person,
-                                        color: Colors.grey[300],
-                                        size: 150,
-                                      ),
-                              ),
-                            )),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 135,
-                          left: 135,
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.indigo,
-                          ),
-                          height: 30,
-                          width: 30,
-                          child: const Icon(
-                            Icons.edit_outlined,
-                            color: Colors.white,
                           ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 135,
+                            left: 135,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.indigo,
+                            ),
+                            height: 30,
+                            width: 30,
+                            child: const Icon(
+                              Icons.edit_outlined,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(
                     height: 20,

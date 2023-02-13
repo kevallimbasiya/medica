@@ -25,7 +25,7 @@ class WelcomeView extends GetView<WelcomeController> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.toNamed(Routes.SPLASH);
+                      Get.offNamed(Routes.SPLASH);
                     },
                     child: const Text(
                       "Welcome to Medica!👋",
