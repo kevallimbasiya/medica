@@ -1,8 +1,28 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../fill_profile/controllers/fill_profile_controller.dart';
-
 class MainController extends GetxController {
-  FillProfileController fillProfileController =
-      Get.find<FillProfileController>();
+  PageController pageController = PageController();
+
+  List icon = [
+    Icons.group,
+    Icons.person,
+    Icons.person,
+    Icons.person,
+    Icons.person,
+    Icons.person,
+    Icons.person,
+    Icons.person,
+  ];
+
+  List text = [
+    "General",
+    "Dentist",
+    "Ophtal",
+    "Nutrition",
+    "Neurology",
+    "pediatic",
+    "Radiology",
+    "More",
+  ];
 }
