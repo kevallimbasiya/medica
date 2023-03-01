@@ -27,8 +27,8 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
               ),
               Text(
                 controller.forgotPasswordController.value
-                    ? "Code has been send to ${controller.signupController.numbercontroller.text}"
-                    : "Code has been send to ${controller.signupController.emailcontroller.text}",
+                    ? "Code has been send to ${controller.signupController.numberController.text}"
+                    : "Code has been send to ${controller.signupController.emailController.text}",
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 18),
               ),

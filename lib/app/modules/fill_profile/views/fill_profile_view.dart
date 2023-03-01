@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:medica/app/routes/app_pages.dart';
 
 import '../controllers/fill_profile_controller.dart';
 
@@ -101,6 +100,7 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: controller.fullnameController,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
                       filled: true,
@@ -117,6 +117,7 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: controller.nicknameController,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
                       filled: true,
@@ -154,6 +155,7 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: controller.mobilenumbercontroller,
                     readOnly: true,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
@@ -173,6 +175,7 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   TextFormField(
+                    readOnly: true,
                     controller: controller.emailcontroller,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -193,6 +196,7 @@ class FillProfileView extends GetView<FillProfileController> {
                     height: 20,
                   ),
                   DropdownButtonFormField(
+                    // value: controller.gendercontroller,
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
                       filled: true,
@@ -220,7 +224,7 @@ class FillProfileView extends GetView<FillProfileController> {
                   ElevatedButton(
                     onPressed: () {
                       if (controller.formKey.currentState!.validate()) {
-                        Get.toNamed(Routes.CREATE_PIN);
+                        controller.fillprofile();
                       }
                     },
                     style: ElevatedButton.styleFrom(

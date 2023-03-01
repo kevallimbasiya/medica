@@ -86,7 +86,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                               height: 10,
                             ),
                             Text(controller
-                                .signupController.numbercontroller.text),
+                                .signupController.numberController.text),
                           ],
                         ),
                       ],
@@ -142,7 +142,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                               height: 10,
                             ),
                             Text(controller
-                                .signupController.emailcontroller.text),
+                                .signupController.emailController.text),
                           ],
                         ),
                       ],

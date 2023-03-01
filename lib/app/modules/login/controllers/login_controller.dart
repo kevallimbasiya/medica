@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:medica/app/routes/app_pages.dart';
@@ -14,30 +14,26 @@ class LoginController extends GetxController {
 
   Future<void> login() async {
     try {
-      final dio = Dio();
       Get.dialog(
           const Center(
             child: CircularProgressIndicator(),
           ),
           barrierDismissible: true);
-      final response = await dio.post(
-        "https://d3wqw.mocklab.io/login",
-        data: {
-          "email": emailController.text,
-          "password": passwordController.text,
-        },
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
       );
+
       Get.back();
-      Get.snackbar("success", response.data["message"]);
+      Get.snackbar("success", 'Use successfull login');
       Get.offAllNamed(Routes.MAIN);
     } catch (e) {
       Get.back();
-      print(e);
+      debugPrint(e.toString());
+      Get.snackbar("error", 'Email or Passwods is incorrect');
     }
   }
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
-  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 }
