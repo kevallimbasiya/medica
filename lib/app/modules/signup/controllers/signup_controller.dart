@@ -61,12 +61,10 @@ class SignupController extends GetxController {
     if (value == null || value.isEmpty) {
       return '*Please enter your password';
     } else if (!passwordvalid) {
-      return '*please enter valid password';
+      return '*please enter strong password';
     } else if (value.length < 8) {
       return '*password must be at least 8 characters long';
     }
     return null;
   }
-
-  
 }

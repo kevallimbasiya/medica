@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/Welcome/bindings/welcome_binding.dart';
 import '../modules/Welcome/views/welcome_view.dart';
+import '../modules/appointment/bindings/appointment_binding.dart';
+import '../modules/appointment/views/appointment_view.dart';
+import '../modules/bottomsheet/bindings/bottomsheet_binding.dart';
+import '../modules/bottomsheet/views/bottomsheet_view.dart';
 import '../modules/create_new_password/bindings/create_new_password_binding.dart';
 import '../modules/create_new_password/views/create_new_password_view.dart';
 import '../modules/create_pin/bindings/create_pin_binding.dart';
@@ -99,6 +103,16 @@ class AppPages {
       name: _Paths.MAIN,
       page: () => const MainView(),
       binding: MainBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOTTOMSHEET,
+      page: () => const BottomsheetView(),
+      binding: BottomsheetBinding(),
+    ),
+    GetPage(
+      name: _Paths.APPOINTMENT,
+      page: () => const AppointmentView(),
+      binding: AppointmentBinding(),
     ),
   ];
 }

@@ -16,6 +16,8 @@ abstract class Routes {
   static const CREATE_NEW_PASSWORD = _Paths.CREATE_NEW_PASSWORD;
   static const SET_FINGERPRINT = _Paths.SET_FINGERPRINT;
   static const MAIN = _Paths.MAIN;
+  static const BOTTOMSHEET = _Paths.BOTTOMSHEET;
+  static const APPOINTMENT = _Paths.APPOINTMENT;
 }
 
 abstract class _Paths {
@@ -33,4 +35,6 @@ abstract class _Paths {
   static const CREATE_NEW_PASSWORD = '/create-new-password';
   static const SET_FINGERPRINT = '/set-fingerprint';
   static const MAIN = '/main';
+  static const BOTTOMSHEET = '/bottomsheet';
+  static const APPOINTMENT = '/appointment';
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:local_auth/local_auth.dart';
 import 'package:medica/app/routes/app_pages.dart';
 
 class SetFingerprintController extends GetxController {
@@ -12,7 +11,7 @@ class SetFingerprintController extends GetxController {
       builder: (context) {
         Future.delayed(const Duration(seconds: 3), () {
           // Navigator.of(context).pop(true);
-          Get.toNamed(Routes.MAIN);
+          Get.offAllNamed(Routes.MAIN);
         });
         return AlertDialog(
           shape:
@@ -54,6 +53,4 @@ class SetFingerprintController extends GetxController {
       },
     );
   }
-
-  
 }

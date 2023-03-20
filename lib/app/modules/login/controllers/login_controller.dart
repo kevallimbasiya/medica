@@ -26,7 +26,7 @@ class LoginController extends GetxController {
 
       Get.back();
       Get.snackbar("success", 'Use successfull login');
-      Get.offAllNamed(Routes.MAIN);
+      Get.offAllNamed(Routes.BOTTOMSHEET);
     } catch (e) {
       Get.back();
       debugPrint(e.toString());
